@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ecommercebackend
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/store?currentSchema=store
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 1
+      idle-timeout: 60000 #2min
+      max-lifetime: 60000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+server:
+  port: 9035
+  servlet:
+    context-path: /api
+jwt:
+  secret: mySecretKey
